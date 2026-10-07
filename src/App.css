@@ -518,6 +518,114 @@ a {
   transform: translateY(-3px);
   opacity: 0.85;
 }
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  background: #11110f;
+  color: #e8e4dc;
+  padding: 110px 7vw 35px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  padding-bottom: 100px;
+  border-bottom: 1px solid rgba(232, 228, 220, 0.15);
+}
+
+.footer-brand h2 {
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+.footer-brand p {
+  margin-top: 28px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(232, 228, 220, 0.6);
+}
+
+.footer-links {
+  display: flex;
+  gap: 100px;
+  padding-top: 12px;
+}
+
+.footer-links > div {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  min-width: 150px;
+}
+
+.footer-links span {
+  margin-bottom: 12px;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 220, 0.4);
+}
+
+.footer-links a {
+  color: #e8e4dc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.5;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding-top: 25px;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 220, 0.35);
+}
+.contact-details {
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-details a {
+  width: fit-content;
+  color: inherit;
+  text-decoration: none;
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  letter-spacing: 0.02em;
+  transition: opacity 0.3s ease;
+}
+
+.contact-details a:hover {
+  opacity: 0.5;
+}
+
+.contact-details p {
+  margin: 8px 0 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.contact-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-bottom: 4px;
+}
 
 
 /* =========================================
@@ -789,6 +897,50 @@ a {
 
     padding: 16px 22px;
   }
+  .contact-details {
+  margin-top: 40px;
+  gap: 16px;
+}
+
+.contact-details a {
+  font-size: 1.05rem;
+}
+
+.contact-details p {
+  font-size: 0.68rem;
+}
+}
+.footer {
+  padding: 75px 6vw 28px;
+}
+
+.footer-top {
+  flex-direction: column;
+  gap: 60px;
+  padding-bottom: 65px;
+}
+
+.footer-brand h2 {
+  font-size: clamp(3rem, 15vw, 5rem);
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+}
+
+.footer-links {
+  gap: 45px;
+  flex-wrap: wrap;
+}
+
+.footer-links > div {
+  min-width: 130px;
+}
+
+.footer-bottom {
+  flex-direction: column;
+  gap: 10px;
+  line-height: 1.6;
 }
 
 

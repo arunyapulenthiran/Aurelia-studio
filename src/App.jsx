@@ -2,38 +2,12 @@ import { motion } from "framer-motion";
 import "./App.css";
 
 function App() {
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = (e) => {
+  e.preventDefault();
 
-    const formData = new FormData(e.target);
-
-    const inquiry = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      projectType: formData.get("projectType"),
-      message: formData.get("message"),
-    };
-
-    try {
-      const response = await fetch("http://localhost:5000/api/inquiries", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(inquiry),
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        alert("Thank you! Your inquiry has been received.");
-        e.target.reset();
-      }
-    } catch (error) {
-      console.error("Error sending inquiry:", error);
-      alert("Something went wrong. Please try again.");
-    }
-  };
+  alert("Thank you! Your inquiry has been received.");
+  e.target.reset();
+};
 
   return (
     <div className="app">
@@ -468,84 +442,71 @@ Our approach brings together thoughtful planning, natural materials, proportion,
         </section>
 
         {/* CONTACT */}
-        <section className="contact" id="contact">
-          <div className="contact-heading">
-            <p className="eyebrow">START A PROJECT</p>
+<section className="contact" id="contact">
+  <div className="contact-heading">
+    <p className="eyebrow">START A PROJECT</p>
 
-            <h2>
-              Let's create something
-              <br />
-              <em>meaningful.</em>
-            </h2>
+    <h2>
+      Let's create something
+      <br />
+      <em>meaningful.</em>
+    </h2>
 
-            <p>
-              Tell us a little about your project and we'll be
-              in touch to discuss the next steps.
-            </p>
-          </div>
+    <p>
+      Have a project in mind? We'd love to hear about it.
+      Get in touch and tell us a little about what you're planning.
+    </p>
+  </div>
 
-          <motion.form
-            className="contact-form"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            onSubmit={handleSubmit}
-          >
-            <div className="form-row">
-              <label>
-                Name
+  <div className="contact-details">
+    <span className="contact-label">CONNECT WITH US</span>
 
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your name"
-                  required
-                />
-              </label>
+    <a href="mailto:hello@aureliastudio.com">
+      hello@aureliastudio.com
+    </a>
 
-              <label>
-                Email
+    <a href="tel:+442079460182">
+      +44 20 7946 0182
+    </a>
 
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="you@example.com"
-                  required
-                />
-              </label>
-            </div>
+    <p>London, United Kingdom</p>
+  </div>
+</section>
+        {/* FOOTER */}
+<footer className="footer">
+  <div className="footer-top">
+    <div className="footer-brand">
+      <h2>AURELIA</h2>
+      <p>
+        Thoughtful architecture and interiors,
+        <br />
+        designed around everyday life.
+      </p>
+    </div>
 
-            <label>
-              Project Type
+    <div className="footer-links">
+      <div>
+        <span>Explore</span>
+        <a href="#about">The Studio</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Selected Work</a>
+      </div>
 
-              <select name="projectType" defaultValue="" required>
-                <option value="" disabled>
-                  Select a service
-                </option>
+      <div>
+        <span>Contact</span>
+        <a href="#contact">Start a Project</a>
+        <a href="mailto:tekodex.co@gmail.com">
+          tekodex.co@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
 
-                <option>Architecture</option>
-                <option>Interior Design</option>
-                <option>Project Planning</option>
-              </select>
-            </label>
-
-            <label>
-              Tell us about your project
-
-              <textarea
-                name="message"
-                rows="5"
-                placeholder="A few details about your project..."
-                required
-              ></textarea>
-            </label>
-
-            <button type="submit">
-              Send Inquiry
-            </button>
-          </motion.form>
-        </section>
+  <div className="footer-bottom">
+    <span>©️ 2026 Aurelia Studio</span>
+    <span>Architecture & Interior Design</span>
+  </div>
+</footer>
       </main>
     </div>
   );
