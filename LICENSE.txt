@@ -1,0 +1,14 @@
+AURELIA STUDIO WEBSITE TEMPLATE
+Copyright (c) 2026 TekodeX.
+
+All rights reserved.
+
+This repository contains the Aurelia Studio website template.
+No rights to redistribute or resell the template source are
+granted by this notice.
+
+Customer usage rights are governed by the specific license
+provided with the purchased product: PERSONAL-LICENSE.txt
+or COMMERCIAL-LICENSE.txt.
+
+Third-party assets remain subject to their respective licenses.

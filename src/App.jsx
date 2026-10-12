@@ -1,12 +1,102 @@
 import { motion } from "framer-motion";
 import "./App.css";
+
+const projects = [
+  {
+    title: "Casa Aurelia",
+    category: "Residential Architecture",
+    year: "2026",
+    image:
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85",
+    alt: "Contemporary residential architecture",
+    large: true,
+  },
+  {
+    title: "Atelier No. 08",
+    category: "Interior Design",
+    year: "2026",
+    image:
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85",
+    alt: "Refined contemporary interior",
+  },
+  {
+    title: "Villa Nira",
+    category: "Residential Interior",
+    year: "2026",
+    image:
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85",
+    alt: "Warm residential interior",
+  },
+  {
+    title: "Casa Verde",
+    category: "Residential Architecture",
+    year: "2026",
+    image:
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
+    alt: "Modern residential exterior",
+  },
+  {
+    title: "House No. 17",
+    category: "Interior Architecture",
+    year: "2025",
+    image:
+      "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1200&q=85",
+    alt: "Carefully detailed interior",
+  },
+  {
+    title: "Maison Aria",
+    category: "Interior Design",
+    year: "2025",
+    image:
+      "https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?auto=format&fit=crop&w=1600&q=85",
+    alt: "Elegant contemporary living space",
+    large: true,
+  },
+  {
+    title: "Villa Sol",
+    category: "Residential Architecture",
+    year: "2025",
+    image:
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85",
+    alt: "Contemporary home exterior",
+  },
+  {
+    title: "Oak Residence",
+    category: "Interior Design",
+    year: "2024",
+    image:
+      "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=1200&q=85",
+    alt: "Natural contemporary interior",
+  },
+  {
+    title: "Linea House",
+    category: "Residential Interior",
+    year: "2024",
+    image:
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85",
+    alt: "Calm modern residential space",
+  },
+];
+
+const siteConfig = {
+  name: "AURELIA",
+  heroLine1: "Spaces designed",
+  heroLine2: "to feel like",
+  heroEmphasis: "HOME.",
+  heroDescription:
+    "Thoughtful architecture and interiors shaped around the way you live. We create timeless spaces that feel personal, purposeful, and beautifully considered.",
+  email: "hello@example.com",
+  phone: "+10000000000",
+  instagram: "https://instagram.com/",
+};
+
 function App() {
   return (
     <div className="app">
       {/* NAVIGATION */}
       <nav className="navbar">
         <a href="#home" className="logo">
-          AURELIA
+          {siteConfig.name}
         </a>
         <div className="nav-links">
           <a href="#about">About</a>
@@ -25,15 +115,15 @@ function App() {
             <p className="eyebrow">
               ARCHITECTURE &amp; INTERIOR DESIGN
             </p>
-            <h1>
-              Spaces designed
-              <br />
-              to feel like <em>HOME.</em>
-            </h1>
+            
+<h1>
+  {siteConfig.heroLine1}
+  <br />
+  {siteConfig.heroLine2} <em>{siteConfig.heroEmphasis}</em>
+</h1>
+
             <p className="hero-description">
-              Thoughtful architecture and interiors shaped around
-              the way you live. We create timeless spaces that feel
-              personal, purposeful, and beautifully considered.
+              {siteConfig.heroDescription}
             </p>
             <a href="#projects" className="hero-cta">
               Explore Projects
@@ -152,6 +242,7 @@ function App() {
             </motion.article>
           </div>
         </section>
+        
         {/* PROJECTS */}
         <section className="projects" id="projects">
           <div className="section-heading projects-heading">
@@ -170,216 +261,40 @@ function App() {
               living.
             </p>
           </div>
+
           <div className="projects-grid">
-            {/* PROJECT 1 */}
-            <motion.article
-              className="project-card project-large"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="project-image">
-                <img
-                  src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85"
-                  alt="Casa Aurelia contemporary residential architecture"
-                  loading="lazy"
-                />
-              </div>
-              <div className="project-info">
-                <div>
-                  <h3>Casa Aurelia</h3>
-                  <p>Residential Architecture</p>
+            {projects.map((project, index) => (
+              <motion.article
+                className={`project-card${project.large ? " project-large" : ""}`}
+                key={project.title}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: project.large ? 0 : 0.1 + (index % 3) * 0.05,
+                }}
+              >
+                <div className="project-image">
+                  <img
+                    src={project.image}
+                    alt={project.alt}
+                    loading="lazy"
+                  />
                 </div>
-                <span>2026</span>
-              </div>
-            </motion.article>
-            {/* PROJECT 2 */}
-            <motion.article
-              className="project-card"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <div className="project-image">
-                <img
-                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
-                  alt="Atelier No. 08 refined contemporary interior"
-                  loading="lazy"
-                />
-              </div>
-              <div className="project-info">
-                <div>
-                  <h3>Atelier No. 08</h3>
-                  <p>Interior Design</p>
+
+                <div className="project-info">
+                  <div>
+                    <h3>{project.title}</h3>
+                    <p>{project.category}</p>
+                  </div>
+                  <span>{project.year}</span>
                 </div>
-                <span>2026</span>
-              </div>
-            </motion.article>
-            {/* PROJECT 3 */}
-            <motion.article
-              className="project-card"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-            >
-              <div className="project-image">
-                <img
-                  src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
-                  alt="Villa Nira warm residential interior"
-                  loading="lazy"
-                />
-              </div>
-              <div className="project-info">
-                <div>
-                  <h3>Villa Nira</h3>
-                  <p>Residential Interior</p>
-                </div>
-                <span>2026</span>
-              </div>
-            </motion.article>
-            {/* PROJECT 4 */}
-            <motion.article
-              className="project-card"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <div className="project-image">
-                <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-                  alt="Casa Verde modern residential exterior"
-                  loading="lazy"
-                />
-              </div>
-              <div className="project-info">
-                <div>
-                  <h3>Casa Verde</h3>
-                  <p>Residential Architecture</p>
-                </div>
-                <span>2026</span>
-              </div>
-            </motion.article>
-            {/* PROJECT 5 */}
-            <motion.article
-              className="project-card"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-            >
-              <div className="project-image">
-                <img
-                  src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1200&q=85"
-                  alt="House No. 17 carefully detailed interior"
-                  loading="lazy"
-                />
-              </div>
-              <div className="project-info">
-                <div>
-                  <h3>House No. 17</h3>
-                  <p>Interior Architecture</p>
-                </div>
-                <span>2025</span>
-              </div>
-            </motion.article>
-            {/* PROJECT 6 */}
-            <motion.article
-              className="project-card project-large"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="project-image">
-                <img
-                  src="https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?auto=format&fit=crop&w=1600&q=85"
-                  alt="Maison Aria elegant contemporary living space"
-                  loading="lazy"
-                />
-              </div>
-              <div className="project-info">
-                <div>
-                  <h3>Maison Aria</h3>
-                  <p>Interior Design</p>
-                </div>
-                <span>2025</span>
-              </div>
-            </motion.article>
-            {/* PROJECT 7 */}
-            <motion.article
-              className="project-card"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <div className="project-image">
-                <img
-                  src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85"
-                  alt="Villa Sol contemporary home exterior"
-                  loading="lazy"
-                />
-              </div>
-              <div className="project-info">
-                <div>
-                  <h3>Villa Sol</h3>
-                  <p>Residential Architecture</p>
-                </div>
-                <span>2025</span>
-              </div>
-            </motion.article>
-            {/* PROJECT 8 */}
-            <motion.article
-              className="project-card"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-            >
-              <div className="project-image">
-                <img
-                  src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=1200&q=85"
-                  alt="Oak Residence natural contemporary interior"
-                  loading="lazy"
-                />
-              </div>
-              <div className="project-info">
-                <div>
-                  <h3>Oak Residence</h3>
-                  <p>Interior Design</p>
-                </div>
-                <span>2024</span>
-              </div>
-            </motion.article>
-            {/* PROJECT 9 */}
-            <motion.article
-              className="project-card"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="project-image">
-                <img
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
-                  alt="Linea House calm modern residential space"
-                  loading="lazy"
-                />
-              </div>
-              <div className="project-info">
-                <div>
-                  <h3>Linea House</h3>
-                  <p>Residential Interior</p>
-                </div>
-                <span>2024</span>
-              </div>
-            </motion.article>
+              </motion.article>
+            ))}
           </div>
         </section>
+
         {/* CONTACT */}
         <section className="contact" id="contact">
           <div className="contact-heading">
@@ -400,23 +315,25 @@ function App() {
                 CONNECT WITH US
               </span>
               {/* TEMPLATE: Replace with your business email */}
-              <a href="mailto:hello@example.com">
+              <a href={`mailto:${siteConfig.email}`}>
                 hello@example.com
               </a>
               {/* TEMPLATE: Replace with your business phone */}
-              <a href="tel:+10000000000">
+              <a href={`tel:${siteConfig.phone}`}>
                 +1 (000) 000-0000
               </a>
               {/* TEMPLATE: Replace with your business location */}
               <p>Your City, Your Country</p>
-              {/* TEMPLATE: Replace with your Instagram URL */}
-              <a
-                href="https://instagram.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Instagram
-              </a>
+              
+{/* TEMPLATE: Replace with your Instagram URL */}
+<a
+  href={siteConfig.instagram}
+  target="_blank"
+  rel="noreferrer"
+>
+  Instagram
+</a>
+
             </div>
           </div>
         </section>
@@ -426,7 +343,7 @@ function App() {
   <div className="footer-main">
     <div className="footer-brand">
       <a href="#home" className="logo">
-        AURELIA
+        {siteConfig.name}
       </a>
       <p>
         Spaces shaped with intention.
@@ -442,16 +359,16 @@ function App() {
     </div>
     <div className="footer-column">
       <span className="footer-label">GET IN TOUCH</span>
-      <a href="mailto:hello@example.com">
+      <a href={`mailto:${siteConfig.email}`}>
         hello@example.com
       </a>
       <a
-        href="https://instagram.com/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Instagram
-      </a>
+  href={siteConfig.instagram}
+  target="_blank"
+  rel="noreferrer"
+>
+  Instagram
+</a>
       <a href="#contact">Start a Project</a>
     </div>
     <a href="#home" className="footer-back-top">
