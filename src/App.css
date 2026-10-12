@@ -981,3 +981,292 @@ a {
     font-size: 13vw;
   }
 }
+/* =========================================
+   AURELIA — TYPOGRAPHY RESTORE
+   Original editorial design
+========================================= */
+/* Section labels */
+.eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+/* THE STUDIO */
+.intro-top {
+  margin-bottom: 48px;
+}
+.intro-content {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: start;
+  gap: 8vw;
+}
+.intro-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(56px, 6.5vw, 88px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.intro-content h2 em {
+  font-weight: 400;
+  font-style: italic;
+}
+.intro-description {
+  max-width: 580px;
+  padding-top: 8px;
+}
+.intro-description p {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: #c9c5bd;
+  margin-bottom: 24px;
+}
+.intro-description .text-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #f6f3ee;
+}
+/* WHAT WE DO + SELECTED WORK */
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+.section-heading > div {
+  flex: 1;
+  min-width: 0;
+}
+.section-heading h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(56px, 6vw, 82px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  margin: 20px 0 0;
+}
+.section-heading h2 em {
+  font-weight: 400;
+  font-style: italic;
+}
+.section-description {
+  flex: 0 1 340px;
+  max-width: 340px;
+  margin: 0 0 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: inherit;
+  opacity: 0.65;
+}
+/* SERVICE CARDS */
+.service-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 42px 0 20px;
+}
+.service-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.9;
+}
+/* PROJECT TITLES */
+.project-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+.project-info p {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+}
+.project-info > span {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+}
+/* CONTACT DETAILS */
+.contact-heading h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(54px, 5.5vw, 76px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+.contact-heading > p:last-child {
+  font-size: 15px;
+  line-height: 1.9;
+}
+.contact-details a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(25px, 2.4vw, 34px);
+  line-height: 1.3;
+}
+/* FOOTER — KEEP THE DARK BACKGROUND */
+.footer {
+  background: #11110f;
+  color: #e8e4dc;
+  padding: 80px 7vw 28px;
+}
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 1fr auto;
+  gap: 40px;
+  align-items: start;
+  padding-bottom: 65px;
+  border-bottom: 1px solid rgba(232, 228, 220, 0.15);
+}
+.footer-brand .logo {
+  display: inline-block;
+  color: #e8e4dc;
+  font-size: 34px;
+  font-weight: 500;
+}
+.footer-brand p {
+  margin-top: 22px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: rgba(232, 228, 220, 0.6);
+}
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+.footer-label {
+  margin-bottom: 8px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: rgba(232, 228, 220, 0.45);
+}
+.footer-column a,
+.footer-back-top {
+  color: #e8e4dc;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+  transition: opacity 0.3s ease;
+}
+.footer-column a:hover,
+.footer-back-top:hover {
+  opacity: 0.55;
+}
+.footer-back-top {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+  color: rgba(232, 228, 220, 0.45);
+}
+/* TABLET + MOBILE */
+@media (max-width: 768px) {
+  .intro {
+    padding: 100px 7vw;
+  }
+  .intro-top {
+    margin-bottom: 35px;
+  }
+  .intro-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .intro-content h2 {
+    font-size: clamp(52px, 12vw, 72px);
+  }
+  .intro-description p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+  .section-heading {
+    display: block;
+    margin-bottom: 48px;
+  }
+  .section-heading h2 {
+    font-size: clamp(48px, 11vw, 68px);
+    line-height: 0.98;
+    margin-top: 16px;
+  }
+  .section-description {
+    max-width: 100%;
+    margin-top: 26px;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+  .service-card h3 {
+    font-size: 30px;
+  }
+  .service-card p {
+    font-size: 14px;
+  }
+  .project-info h3 {
+    font-size: 26px;
+  }
+  .contact-heading h2 {
+    font-size: clamp(48px, 11vw, 66px);
+  }
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 24px;
+    padding-bottom: 42px;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+  .footer-back-top {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+  }
+}
+@media (max-width: 390px) {
+  .intro-content h2,
+  .section-heading h2 {
+    font-size: 46px;
+  }
+  .contact-heading h2 {
+    font-size: 44px;
+  }
+  .project-info h3 {
+    font-size: 23px;
+  }
+  .footer-main {
+    gap: 30px 16px;
+  }
+  .footer-column a {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+}
