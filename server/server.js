@@ -12,12 +12,15 @@ const PORT = process.env.PORT || 5000;
 app.set("trust proxy", 1);
 
 
-const allowedOrigins = (
-  process.env.FRONTEND_ORIGIN ||
-  "http://localhost:5173,https://effective-fiesta-5v4p977gwj47c7jw6-5173.app.github.dev"
-)
-  .split(",")
-  .map((origin) => origin.trim());
+const allowedOrigins = [
+  ...(
+    process.env.FRONTEND_ORIGIN ||
+    "http://localhost:5173,https://effective-fiesta-5v4p977gwj47c7jw6-5173.app.github.dev"
+  )
+    .split(",")
+    .map((origin) => origin.trim()),
+  "https://aurelia-studio-two.vercel.app",
+];
 
 
 app.use(
