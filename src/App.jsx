@@ -30,9 +30,9 @@ function App() {
 
     
 try {
-  console.log("Sending inquiry to:", "https://effective-fiesta-5v4p977gwj47c7jw6-5000.app.github.dev/api/inquiries");
+  console.log("Sending inquiry to:", "https://aurelia-studio-2dzr.vercel.app/");
   const response = await fetch(
-    "https://effective-fiesta-5v4p977gwj47c7jw6-5000.app.github.dev/api/inquiries",
+    "https://aurelia-studio-2dzr.vercel.app/",
     {
       method: "POST",
       headers: {
